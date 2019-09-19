@@ -4,6 +4,14 @@
     <bytecodeTargetLevel>
       <module name="io.main" target="1.8" />
       <module name="io.test" target="1.8" />
+      <module name="placeholderengine.common.main" target="1.8" />
+      <module name="placeholderengine.common.test" target="1.8" />
+      <module name="placeholderengine.gui.interface.main" target="1.8" />
+      <module name="placeholderengine.gui.interface.test" target="1.8" />
+      <module name="placeholderengine.gui.main" target="1.8" />
+      <module name="placeholderengine.gui.runtime.main" target="1.8" />
+      <module name="placeholderengine.gui.runtime.test" target="1.8" />
+      <module name="placeholderengine.gui.test" target="1.8" />
       <module name="placeholderengine.interface.main" target="1.8" />
       <module name="placeholderengine.interface.test" target="1.8" />
       <module name="placeholderengine.io.main" target="1.8" />

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ScalaCompilerConfiguration">
-    <profile name="Gradle 1" modules="io.main,io.test,placeholderengine.interface.main,placeholderengine.interface.test,placeholderengine.io.main,placeholderengine.io.test,placeholderengine.main,placeholderengine.test,placeholderengine.test.main,placeholderengine.test.test,test.main,test.test">
+    <profile name="Gradle 1" modules="io.main,io.test,placeholderengine.common.main,placeholderengine.common.test,placeholderengine.gui.interface.main,placeholderengine.gui.interface.test,placeholderengine.gui.main,placeholderengine.gui.runtime.main,placeholderengine.gui.runtime.test,placeholderengine.gui.test,placeholderengine.interface.main,placeholderengine.interface.test,placeholderengine.io.main,placeholderengine.io.test,placeholderengine.main,placeholderengine.test,placeholderengine.test.main,placeholderengine.test.test,test.main,test.test">
       <option name="deprecationWarnings" value="true" />
       <option name="uncheckedWarnings" value="true" />
       <parameters>

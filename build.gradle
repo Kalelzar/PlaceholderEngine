@@ -8,14 +8,10 @@ allprojects {
 
     repositories {
         mavenCentral()
+        jcenter()
         maven{
             url 'https://dl.bintray.com/bmc/maven'
         }
-    }
-
-    task testRun(type: JavaExec, dependsOn: classes) {
-        main = 'RunTest'
-        classpath = sourceSets.main.runtimeClasspath
     }
 
     dependencies {
@@ -23,11 +19,28 @@ allprojects {
         implementation group: 'org.clapper', name: 'classutil_2.13', version: '1.5.1'
     }
 
+    group 'src.kalelzar.placeholderengine'
+    version '1.0'
+    sourceCompatibility = 1.8
+
 }
 
+configure(subprojects.findAll{it.name != 'common' && it.name != 'test'}) {
+    dependencies {
+        implementation project(':common')
+    }
+}
 
+configure(subprojects.findAll{it.name != 'test'}) {
+    apply plugin: 'scala'
+    
+    dependencies {
+        implementation project(':test')
+    }
 
-
-group 'src.kalelzar.placeholderengine'
-version '1.0-SNAPSHOT'
-sourceCompatibility = 1.8
+    task testRun(type: JavaExec, dependsOn: classes) {
+        main = 'RunTest'
+        classpath = sourceSets.main.runtimeClasspath
+    }
+    
+}

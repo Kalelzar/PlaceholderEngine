@@ -1,5 +1,9 @@
 package src.kalelzar.placeholderengine.interface
 
+import src.kalelzar.placeholderengine.common.exception.PlaceholderEngineError
+import src.kalelzar.placeholderengine.interface.graphics.{Scene, WindowFeature}
+import src.kalelzar.placeholderengine.interface.util.ICallback
+
 import scala.collection.immutable.HashMap
 
 trait PlaceholderEngineWindow extends ICallback {
@@ -14,7 +18,7 @@ trait PlaceholderEngineWindow extends ICallback {
     *
     * @param features the features to register.
     */
-  def registerFeatures(features: Seq[WindowFeatures]): Unit
+  def registerFeatures(features: Seq[WindowFeature]): Unit
 
   /**
     * Initializes the window and all its WindowFeatures
@@ -28,7 +32,7 @@ trait PlaceholderEngineWindow extends ICallback {
     * @param scene the scene to add to the window
     */
   def addScene(scene: Scene): Unit = {
-    scenes = scenes ++ Seq(scene.name, scene)
+    scenes = scenes.updated(scene.name, scene)
   }
 
   /**

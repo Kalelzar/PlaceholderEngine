@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<module external.linked.project.id=":io:test" external.linked.project.path="$MODULE_DIR$/../../../io" external.root.project.path="$MODULE_DIR$/../../.." external.system.id="GRADLE" external.system.module.group="src.kalelzar.placeholderengine" external.system.module.type="sourceSet" external.system.module.version="1.0" type="JAVA_MODULE" version="4">
+<module external.linked.project.id=":gui:runtime:test" external.linked.project.path="$MODULE_DIR$/../../../../gui/runtime" external.root.project.path="$MODULE_DIR$/../../../.." external.system.id="GRADLE" external.system.module.group="src.kalelzar.placeholderengine" external.system.module.type="sourceSet" external.system.module.version="1.0" type="JAVA_MODULE" version="4">
   <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_8">
-    <output-test url="file://$MODULE_DIR$/../../../io/out/test/classes" />
+    <output-test url="file://$MODULE_DIR$/../../../../gui/runtime/out/test/classes" />
     <exclude-output />
-    <content url="file://$MODULE_DIR$/../../../io/src/test">
-      <sourceFolder url="file://$MODULE_DIR$/../../../io/src/test/java" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/../../../io/src/test/resources" type="java-test-resource" />
-      <sourceFolder url="file://$MODULE_DIR$/../../../io/src/test/scala" isTestSource="true" />
+    <content url="file://$MODULE_DIR$/../../../../gui/runtime/src/test">
+      <sourceFolder url="file://$MODULE_DIR$/../../../../gui/runtime/src/test/java" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../../../../gui/runtime/src/test/scala" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../../../../gui/runtime/src/test/resources" type="java-test-resource" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module" module-name="placeholderengine.io.main" />
+    <orderEntry type="module" module-name="placeholderengine.gui.runtime.main" />
     <orderEntry type="library" name="Gradle: org.clapper:classutil_2.13:1.5.1" level="project" />
     <orderEntry type="library" name="Gradle: org.clapper:grizzled-scala_2.13:4.9.3" level="project" />
     <orderEntry type="library" name="Gradle: org.scala-lang.modules:scala-collection-compat_2.13:2.0.0" level="project" />
@@ -23,5 +23,5 @@
     <orderEntry type="library" name="Gradle: org.ow2.asm:asm-tree:7.1" level="project" />
     <orderEntry type="library" name="Gradle: org.ow2.asm:asm:7.1" level="project" />
   </component>
-  <component name="TestModuleProperties" production-module="placeholderengine.io.main" />
+  <component name="TestModuleProperties" production-module="placeholderengine.gui.runtime.main" />
 </module>

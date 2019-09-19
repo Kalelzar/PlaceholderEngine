@@ -7,9 +7,18 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/io.main.iml" filepath="$PROJECT_DIR$/.idea/modules/io.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/io.test.iml" filepath="$PROJECT_DIR$/.idea/modules/io.test.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/placeholderengine.iml" filepath="$PROJECT_DIR$/.idea/modules/placeholderengine.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/interface/placeholderengine.interface.iml" filepath="$PROJECT_DIR$/.idea/modules/interface/placeholderengine.interface.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/interface/placeholderengine.interface.main.iml" filepath="$PROJECT_DIR$/.idea/modules/interface/placeholderengine.interface.main.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/interface/placeholderengine.interface.test.iml" filepath="$PROJECT_DIR$/.idea/modules/interface/placeholderengine.interface.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/common/placeholderengine.common.iml" filepath="$PROJECT_DIR$/.idea/modules/common/placeholderengine.common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/common/placeholderengine.common.main.iml" filepath="$PROJECT_DIR$/.idea/modules/common/placeholderengine.common.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/common/placeholderengine.common.test.iml" filepath="$PROJECT_DIR$/.idea/modules/common/placeholderengine.common.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/gui/placeholderengine.gui.iml" filepath="$PROJECT_DIR$/.idea/modules/gui/placeholderengine.gui.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/gui/interface/placeholderengine.gui.interface.iml" filepath="$PROJECT_DIR$/.idea/modules/gui/interface/placeholderengine.gui.interface.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/gui/interface/placeholderengine.gui.interface.main.iml" filepath="$PROJECT_DIR$/.idea/modules/gui/interface/placeholderengine.gui.interface.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/gui/interface/placeholderengine.gui.interface.test.iml" filepath="$PROJECT_DIR$/.idea/modules/gui/interface/placeholderengine.gui.interface.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/gui/placeholderengine.gui.main.iml" filepath="$PROJECT_DIR$/.idea/modules/gui/placeholderengine.gui.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/gui/runtime/placeholderengine.gui.runtime.iml" filepath="$PROJECT_DIR$/.idea/modules/gui/runtime/placeholderengine.gui.runtime.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/gui/runtime/placeholderengine.gui.runtime.main.iml" filepath="$PROJECT_DIR$/.idea/modules/gui/runtime/placeholderengine.gui.runtime.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/gui/runtime/placeholderengine.gui.runtime.test.iml" filepath="$PROJECT_DIR$/.idea/modules/gui/runtime/placeholderengine.gui.runtime.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/gui/placeholderengine.gui.test.iml" filepath="$PROJECT_DIR$/.idea/modules/gui/placeholderengine.gui.test.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/io/placeholderengine.io.iml" filepath="$PROJECT_DIR$/.idea/modules/io/placeholderengine.io.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/io/placeholderengine.io.main.iml" filepath="$PROJECT_DIR$/.idea/modules/io/placeholderengine.io.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/io/placeholderengine.io.test.iml" filepath="$PROJECT_DIR$/.idea/modules/io/placeholderengine.io.test.iml" />

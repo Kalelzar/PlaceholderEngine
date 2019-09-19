@@ -1,5 +1,9 @@
 package src.kalelzar.placeholderengine.interface
 
+import src.kalelzar.placeholderengine.common.math.Vector2
+import src.kalelzar.placeholderengine.interface.graphics.{Scene, WindowFeature}
+import src.kalelzar.placeholderengine.interface.util.PlaceholderEngineRuntime
+
 trait PlaceholderEngineApp {
 
   /**
@@ -85,15 +89,15 @@ trait PlaceholderEngineApp {
     * must be called for the window to be displayed.
     */
   protected def initWindow(f: WindowFeature*): Unit = {
-    window.registerFeatures(f)
+    window.registerFeatures(f.toSeq)
 
-    window.registerCallback("onWindowCreate", onWindowCreate)
-    window.registerCallback("onWindowUpdate", onWindowUpdate)
-    window.registerCallback("onWindowDestroyed", onWindowDestroyed)
-    window.registerCallback("onWindowShow", onWindowShow)
-    window.registerCallback("onWindowHide", onWindowHide)
-    window.registerCallback("onWindowResize", onWinonWindowResizedowCreate)
-    window.registerCallback("onWindowSceneChanged", onWindowSceneChanged)
+    window.registerCallback("onWindowCreate", onWindowCreate _)
+    window.registerCallback("onWindowUpdate", onWindowRender _)
+    window.registerCallback("onWindowDestroyed", onWindowDestroyed _)
+    window.registerCallback("onWindowShow", onWindowShow _)
+    window.registerCallback("onWindowHide", onWindowHide _)
+    window.registerCallback("onWindowResize", onWindowResize _)
+    window.registerCallback("onWindowSceneChanged", onWindowSceneChanged _)
 
     window.ready()
   }
@@ -102,7 +106,7 @@ trait PlaceholderEngineApp {
     * Callback for the moment the window used by the app is created.
     * Called once immediately after initWindow resolves
     */
-  def onWindowCreate(window: Window): Unit = null
+  def onWindowCreate(window: PlaceholderEngineWindow): Unit = null
 
   /**
     * Called once just before the window is destroyed.

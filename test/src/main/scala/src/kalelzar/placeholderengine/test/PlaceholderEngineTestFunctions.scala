@@ -12,7 +12,7 @@ object PlaceholderEngineTestFunctions {
   }
 
   def assertEqual[A](a: A, b: A, msg: String = "Values are not equal!"): Unit = {
-    if (!(a equals b)) except(msg)
+    if (!(a equals b)) except(msg + s" Expected $b but got $a")
   }
 
   def except(msg: String): Unit = throw new FailedTestException(msg)

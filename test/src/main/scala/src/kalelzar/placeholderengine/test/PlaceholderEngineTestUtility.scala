@@ -34,6 +34,7 @@ object PlaceholderEngineTestUtility {
     val count = tests.length
     var passed = 0f
     var index = 0
+    val failed = mutable.ListBuffer[String]()
     Console.out.println("Beginning tests.")
     tests.foreach {
       x =>
@@ -42,12 +43,16 @@ object PlaceholderEngineTestUtility {
         val (success, errorMsg) = runTest(x)
         if (!success) {
           Console.err.println(s"Test ${x.name} failed. $errorMsg")
+          failed += s"Test ${x.name} failed with '$errorMsg'"
         } else {
           Console.out.println(s"Test ${x.name} passed.")
           passed += 1
         }
     }
     Console.out.println(s"\n${passed.toInt}/$count [${passed / count * 100}%] passed.")
+    Console.out.println(s"\n${failed.mkString("\n")}")
+
+
   }
 
   def runTest(test: PlaceholderEngineTest): (Boolean, String) = {

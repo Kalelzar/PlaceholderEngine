@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <bytecodeTargetLevel>
+      <module name="io.main" target="1.8" />
+      <module name="io.test" target="1.8" />
+      <module name="placeholderengine.interface.main" target="1.8" />
+      <module name="placeholderengine.interface.test" target="1.8" />
+      <module name="placeholderengine.io.main" target="1.8" />
+      <module name="placeholderengine.io.test" target="1.8" />
+      <module name="placeholderengine.main" target="1.8" />
+      <module name="placeholderengine.test" target="1.8" />
+      <module name="placeholderengine.test.main" target="1.8" />
+      <module name="placeholderengine.test.test" target="1.8" />
+      <module name="test.main" target="1.8" />
+      <module name="test.test" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

@@ -1,0 +1,33 @@
+
+plugins {
+    id 'scala'
+}
+
+allprojects {
+    apply plugin: 'scala'
+
+    repositories {
+        mavenCentral()
+        maven{
+            url 'https://dl.bintray.com/bmc/maven'
+        }
+    }
+
+    task testRun(type: JavaExec, dependsOn: classes) {
+        main = 'RunTest'
+        classpath = sourceSets.main.runtimeClasspath
+    }
+
+    dependencies {
+        implementation 'org.scala-lang:scala-library:2.13.1'
+        implementation group: 'org.clapper', name: 'classutil_2.13', version: '1.5.1'
+    }
+
+}
+
+
+
+
+group 'src.kalelzar.placeholderengine'
+version '1.0-SNAPSHOT'
+sourceCompatibility = 1.8

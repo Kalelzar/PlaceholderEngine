@@ -1,0 +1,7 @@
+apply plugin: 'scala'
+
+group 'src.kalelzar.placeholderengine'
+version '1.0-SNAPSHOT'
+sourceCompatibility = 1.8
+
+

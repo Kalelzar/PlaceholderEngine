@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: org.clapper:grizzled-scala_2.13:4.9.3">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.clapper/grizzled-scala_2.13/4.9.3/ef70dd530e5490854ab4cf84e29926de465745e8/grizzled-scala_2.13-4.9.3.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.clapper/grizzled-scala_2.13/4.9.3/e8b3dad00a550292ecd12b24e0d05a128f5bd899/grizzled-scala_2.13-4.9.3-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

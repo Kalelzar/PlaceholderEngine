@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: org.clapper:classutil_2.13:1.5.1">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.clapper/classutil_2.13/1.5.1/27195ca90bce659c9af0661e2730bc509efc1e4b/classutil_2.13-1.5.1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.clapper/classutil_2.13/1.5.1/ee20c48c689f3529d9729822a3f29d6ade5654c5/classutil_2.13-1.5.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

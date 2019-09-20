@@ -23,7 +23,16 @@ trait ICallback {
 }
 
 trait Callback{
-  def apply(p: Seq[Any]): Unit
+  def apply(p: Seq[Any]): Unit ={
+    try{
+      execute(p)
+    }catch{
+      //TODO: Add special handling of ClassCastException
+      case e: ClassCastException => throw RuntimeException(e)
+      case e => throw RuntimeException(e)
+    }
+  }
+  def execute(p: Seq[Any]): Unit
   def asCallback: Callback = this
 }
 

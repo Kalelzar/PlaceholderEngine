@@ -21,7 +21,6 @@ case class Vector2(x: Float, y: Float) {
 
   /**
     * Divide this vector by a scalar
-    *
     * @unit
     * @param scalar a floating point number
     * @return the new vector2
@@ -44,6 +43,7 @@ case class Vector2(x: Float, y: Float) {
   /**
     * The dot product with another vector
     *
+    * @unit
     * @param other the other vector
     * @return the dot product
     */

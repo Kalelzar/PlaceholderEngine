@@ -1,7 +1,7 @@
 package src.kalelzar.placeholderengine.io
 
+import src.kalelzar.placeholderengine.common.exception.PlaceholderEngineParsingException
 import src.kalelzar.placeholderengine.io.format.TextFile
-import src.kalelzar.placeholderengine.io.parse.PlaceholderEngineParsingException
 import src.kalelzar.placeholderengine.io.parse.format.{ASSParser, IniParser, XMLParser}
 
 object IO {

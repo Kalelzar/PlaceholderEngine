@@ -1,5 +1,6 @@
 package src.kalelzar.placeholderengine.io.parse
 
+import src.kalelzar.placeholderengine.common.exception.PlaceholderEngineParsingException
 import src.kalelzar.placeholderengine.io.NodeBasedFile
 
 

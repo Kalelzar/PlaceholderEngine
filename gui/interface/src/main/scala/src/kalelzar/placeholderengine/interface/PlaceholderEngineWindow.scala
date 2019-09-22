@@ -6,6 +6,10 @@ import src.kalelzar.placeholderengine.interface.util.ICallback
 
 import scala.collection.immutable.HashMap
 
+/**
+  * Window interface used by PlaceholderEngine
+  * Implementation of the actual window is runtime-dependant
+  */
 trait PlaceholderEngineWindow extends ICallback[Unit] {
 
   private var scenes = HashMap[String, Scene]()

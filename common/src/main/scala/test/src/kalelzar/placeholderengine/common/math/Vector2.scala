@@ -1,7 +1,7 @@
 package test.src.kalelzar.placeholderengine.common.math
 
-import src.kalelzar.placeholderengine.common.math.{Mathf, Vector2}
 import src.kalelzar.placeholderengine.common.math.MathImplicits._
+import src.kalelzar.placeholderengine.common.math.{Mathf, Vector2}
 import src.kalelzar.placeholderengine.test.PlaceholderEngineTest
 import src.kalelzar.placeholderengine.test.PlaceholderEngineTestFunctions._
 
@@ -184,7 +184,20 @@ class Vector2_AngleTest extends PlaceholderEngineTest {
       val y = Random.between(0, 100).toFloat
       val nx = Random.between(0, 100).toFloat
       val ny = Random.between(0, 100).toFloat
-      val r = Mathf.cosTForAngle(mag(x,y), mag(nx,ny), Math.sqrt(Math.pow(x-nx,2) + Math.pow(y-ny,2)).toFloat)
+
+
+      val a = Vector2(x, y)
+      val b = Vector2(nx, ny)
+
+      val r = if (a.distance(b) == 0) 0
+      else if (a.magnitude == 0) {
+        val n = b.normal
+        Mathf.cosTForAngle(n.x, n.y, 1)
+      } else if (b.magnitude == 0) {
+        val n = a.normal
+        Mathf.cosTForAngle(n.x, n.y, 1)
+      } else Mathf.cosTForAngle(a.magnitude, b.magnitude, a.distance(b))
+
       (x, y, nx, ny, r)
     }
   }

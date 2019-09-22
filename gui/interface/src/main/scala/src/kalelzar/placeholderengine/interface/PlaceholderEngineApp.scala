@@ -4,6 +4,9 @@ import src.kalelzar.placeholderengine.common.math.Vector2
 import src.kalelzar.placeholderengine.interface.graphics.{Scene, WindowFeature}
 import src.kalelzar.placeholderengine.interface.util.PlaceholderEngineRuntime
 
+/**
+  * Base class for PlaceholderEngine apps
+  */
 trait PlaceholderEngineApp {
 
   /**
@@ -47,7 +50,7 @@ trait PlaceholderEngineApp {
     *
     * @param delta time elapsed since last render in seconds
     */
-  def onWindowRender(delta: Float): Unit = null
+  def onWindowRender(delta: Float): Unit
 
   /**
     * Called every time the window is resized
@@ -106,23 +109,23 @@ trait PlaceholderEngineApp {
     * Callback for the moment the window used by the app is created.
     * Called once immediately after initWindow resolves
     */
-  def onWindowCreate(window: PlaceholderEngineWindow): Unit = null
+  def onWindowCreate(window: PlaceholderEngineWindow): Unit
 
   /**
     * Called once just before the window is destroyed.
     */
-  def onWindowDestroyed(): Unit = null
+  def onWindowDestroyed(): Unit
 
   /**
     * Called every time the window is unhidden (is that a word?).
     * Does nothing if the window is not hidden
     */
-  def onWindowShow(): Unit = null
+  def onWindowShow(): Unit
 
   /**
     * Called every time the window is hidden (is that a word?).
     * Does nothing if the window is already hidden
     */
-  def onWindowHide(): Unit = null
+  def onWindowHide(): Unit
 
 }

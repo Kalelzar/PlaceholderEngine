@@ -48,6 +48,7 @@ object PlaceholderEngineTestUtility {
           Console.out.println(s"Test ${x.name} passed.")
           passed += 1
         }
+        Console.out.println("")
     }
     Console.out.println(s"\n${passed.toInt}/$count [${passed / count * 100}%] passed.")
     Console.out.println(s"\n${failed.mkString("\n")}")

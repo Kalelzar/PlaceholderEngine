@@ -4,7 +4,9 @@ import src.kalelzar.placeholderengine.io.parse.{Scanner, Token, TokenType}
 
 import scala.collection.mutable
 
+
 class IniScanner extends Scanner {
+
   override val keywords: Map[String, TokenType] = Map.empty[String, TokenType]
 
   override def scan(): Seq[Token] = {

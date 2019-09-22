@@ -1,8 +1,9 @@
 package src.kalelzar.placeholderengine.io.parse.format
 
+import src.kalelzar.placeholderengine.common.exception.PlaceholderEngineParsingException
 import src.kalelzar.placeholderengine.io.Node
 import src.kalelzar.placeholderengine.io.format.XMLFile
-import src.kalelzar.placeholderengine.io.parse.{NodeParser, PlaceholderEngineParsingException, Scanner, Token}
+import src.kalelzar.placeholderengine.io.parse.{NodeParser, Scanner, Token}
 
 import scala.collection.mutable
 

@@ -60,7 +60,9 @@ object PlaceholderEngineTestUtility {
       test.launch(test.arguments)
     } catch {
       case e: FailedTestException => return (false, e.getMessage)
-      case e: Exception => return (false, s"Test failed with exception. ${e.getClass.getSimpleName}: ${e.getMessage}")
+      case e: Exception =>
+        e.printStackTrace()
+        return (false, s"Test failed with exception. ${e.getClass.getSimpleName}: ${e.getMessage}")
     }
     (true, "")
   }

@@ -1,5 +1,5 @@
 package src.kalelzar.placeholderengine.common.math
-
+import MathImplicits._
 /**
   * An immutable representation of a two-dimensional vector
   *
@@ -33,11 +33,19 @@ case class Vector2(x: Float, y: Float) {
   /**
     * The angle in radians between this vector and another vector
     *
+    * @unit
     * @param other the other vector
     * @return the angle
     */
   def angle(other: Vector2): Float = {
-    Math.acos(dotProduct(other) / (magnitude * other.magnitude)).toFloat
+    if(distance(other) == 0) 0
+    else if(magnitude == 0) {
+      val n = other.normal
+      Mathf.cosTForAngle(n.x, n.y, 1)
+    }else if(other.magnitude == 0){
+      val n = normal
+      Mathf.cosTForAngle(n.x, n.y, 1)
+    }else Mathf.cosTForAngle(magnitude, other.magnitude, distance(other))
   }
 
   /**
@@ -54,6 +62,7 @@ case class Vector2(x: Float, y: Float) {
   /**
     * The Euclidean distance between this vector and another
     *
+    * @unit
     * @param other the other vector
     * @return the distance
     */
@@ -102,27 +111,44 @@ case class Vector2(x: Float, y: Float) {
     * Limits the magnitude of the vector to the upper bound provided
     * If it is smaller it just returns this vector
     * Otherwise it scales the vector down
-    *
+    * @unit
     * @param mag the upper bound for magnitude
     * @return the limited vector
     */
   def limit(mag: Float): Vector2 = {
     if (magnitude > mag) {
-      if (y == 0) return Vector2(Math.abs(mag), 0)
-      val const = x / y
-      val y1 = Math.abs(mag) * Math.sqrt(1 / (1 + const)).toFloat
-      val x1 = y1 * const
+      if (y == 0) return Vector2(Math.signum(x)*Math.abs(mag), 0f)
+      val n = normal
+      if (x == 0) return Vector2(0, Math.signum(y)*Math.abs(mag))
+      val a = (y - n.y) / (x - n.x)
+      val b = y - a*x
+
+      val a2 = a.squared
+      val b2 = b.squared
+      val mag2 = mag.squared
+
+      if(a2*mag2-b2+mag2 < 0) {
+        val x1 = (-a*b)/(a2+1)
+        val y1 = x1*a + b
+        return Vector2(x1, y1)
+      }
+
+      val x11 = (Math.sqrt(a2*mag2-b2+mag2).toFloat-a*b)/(a2+1)
+      val x12 = (-Math.sqrt(a2*mag2-b2+mag2).toFloat-a*b)/(a2+1)
+      val x1 = if(Vector2(x11, x11*a + b).distance(this) < Vector2(x12, x12*a +b).distance(this)) x11 else x12
+      val y1 = x1*a + b
+
       Vector2(x1, y1)
     } else this
   }
 
   /**
     * The magnitude of the vector
-    *
+    * @unit
     * @return the magnitude
     */
   def magnitude: Float = {
-    Math.sqrt(x * x + y * y).toFloat
+    distance(Vector2.zero)
   }
 
 }

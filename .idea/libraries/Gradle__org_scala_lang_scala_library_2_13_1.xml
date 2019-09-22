@@ -1,15 +1,5 @@
 <component name="libraryTable">
-  <library name="Gradle: org.scala-lang:scala-library:2.13.1" type="Scala">
-    <properties>
-      <language-level>Scala_2_13</language-level>
-      <compiler-classpath>
-        <root url="file://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.scala-lang/scala-compiler/2.13.1/2669fd1abfe2c76de9201174255f8454aa25c3e2/scala-compiler-2.13.1.jar" />
-        <root url="file://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.scala-lang/scala-reflect/2.13.1/c4123cd3d2a7502d16f443cd52fb23763bef8402/scala-reflect-2.13.1.jar" />
-        <root url="file://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.scala-lang/scala-library/2.13.1/1418c956704990564fb9dfac5960647ca54b5a91/scala-library-2.13.1.jar" />
-        <root url="file://$USER_HOME$/.gradle/caches/modules-2/files-2.1/jline/jline/2.14.6/c3aeac59c022bdc497c8c48ed86fa50450e4896a/jline-2.14.6.jar" />
-        <root url="file://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.fusesource.jansi/jansi/1.12/633f12e3ab3cdf2d151b4061fff389c66ee8d01b/jansi-1.12.jar" />
-      </compiler-classpath>
-    </properties>
+  <library name="Gradle: org.scala-lang:scala-library:2.13.1">
     <CLASSES>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.scala-lang/scala-library/2.13.1/1418c956704990564fb9dfac5960647ca54b5a91/scala-library-2.13.1.jar!/" />
     </CLASSES>

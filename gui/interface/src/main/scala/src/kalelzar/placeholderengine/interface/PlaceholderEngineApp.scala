@@ -89,15 +89,15 @@ trait PlaceholderEngineApp {
     * must be called for the window to be displayed.
     */
   protected def initWindow(f: WindowFeature*): Unit = {
-    window.registerFeatures(f.toSeq)
-
-    window.registerCallback("onWindowCreate", onWindowCreate _)
-    window.registerCallback("onWindowUpdate", onWindowRender _)
-    window.registerCallback("onWindowDestroyed", onWindowDestroyed _)
-    window.registerCallback("onWindowShow", onWindowShow _)
-    window.registerCallback("onWindowHide", onWindowHide _)
-    window.registerCallback("onWindowResize", onWindowResize _)
-    window.registerCallback("onWindowSceneChanged", onWindowSceneChanged _)
+    window.registerFeatures(f)
+    import src.kalelzar.placeholderengine.interface.util.Callback._
+    window.registerCallback("onWindowCreate", (onWindowCreate _).asCallback)
+    window.registerCallback("onWindowUpdate", (onWindowRender _).asCallback)
+    window.registerCallback("onWindowDestroyed", (onWindowDestroyed _).asCallback)
+    window.registerCallback("onWindowShow", (onWindowShow _).asCallback)
+    window.registerCallback("onWindowHide", (onWindowHide _).asCallback)
+    window.registerCallback("onWindowResize", (onWindowResize _).asCallback)
+    window.registerCallback("onWindowSceneChanged", (onWindowSceneChanged _).asCallback)
 
     window.ready()
   }

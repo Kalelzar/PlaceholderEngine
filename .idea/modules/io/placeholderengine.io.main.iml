@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module external.linked.project.id=":io:main" external.linked.project.path="$MODULE_DIR$/../../../io" external.root.project.path="$MODULE_DIR$/../../.." external.system.id="GRADLE" external.system.module.group="src.kalelzar.placeholderengine" external.system.module.type="sourceSet" external.system.module.version="1.0" type="JAVA_MODULE" version="4">
   <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_8">
-    <output url="file://$MODULE_DIR$/../../../io/out/production/classes" />
+    <output url="file://$MODULE_DIR$/../../../io/build/classes/java/main" />
     <exclude-output />
     <content url="file://$MODULE_DIR$/../../../io/src/main">
       <sourceFolder url="file://$MODULE_DIR$/../../../io/src/main/java" isTestSource="false" />
@@ -15,9 +15,9 @@
     <orderEntry type="library" name="Gradle: org.scala-lang.modules:scala-collection-compat_2.13:2.0.0" level="project" />
     <orderEntry type="library" name="Gradle: org.scala-lang:scala-library:2.13.1" level="project" />
     <orderEntry type="module" module-name="placeholderengine.common.main" />
-    <orderEntry type="module" module-name="placeholderengine.test.main" />
     <orderEntry type="library" name="Gradle: org.ow2.asm:asm-commons:7.1" level="project" />
     <orderEntry type="library" name="Gradle: org.ow2.asm:asm-util:7.1" level="project" />
+    <orderEntry type="module" module-name="placeholderengine.test.main" />
     <orderEntry type="library" name="Gradle: org.ow2.asm:asm-analysis:7.1" level="project" />
     <orderEntry type="library" name="Gradle: org.ow2.asm:asm-tree:7.1" level="project" />
     <orderEntry type="library" name="Gradle: org.ow2.asm:asm:7.1" level="project" />

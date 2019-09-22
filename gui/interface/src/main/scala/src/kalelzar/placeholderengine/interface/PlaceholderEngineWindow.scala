@@ -6,7 +6,7 @@ import src.kalelzar.placeholderengine.interface.util.ICallback
 
 import scala.collection.immutable.HashMap
 
-trait PlaceholderEngineWindow extends ICallback {
+trait PlaceholderEngineWindow extends ICallback[Unit] {
 
   private var scenes = HashMap[String, Scene]()
   private var activeScene: Scene = _

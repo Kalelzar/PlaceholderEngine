@@ -5,7 +5,7 @@ import src.kalelzar.placeholderengine.io.{IO, JavaIOPathResolver, PathResolver}
 import src.kalelzar.placeholderengine.test.PlaceholderEngineTest
 import src.kalelzar.placeholderengine.test.PlaceholderEngineTestFunctions._
 
-class Save_File_Test extends PlaceholderEngineTest {
+class Save_PlaceholderEngineFileTest extends PlaceholderEngineTest {
   override def test(any: Seq[Any]): Unit = {
     PathResolver.resolver = new JavaIOPathResolver
     val file = IO.open(any(0).toString, "txt").asInstanceOf[TextFile]
@@ -14,5 +14,5 @@ class Save_File_Test extends PlaceholderEngineTest {
     assertEqual(file.iterator.mkString("\n"), file2.iterator.mkString("\n"))
   }
 
-  override def arguments: Seq[Any] = Seq("test.txt")
+  override def arguments: Seq[Any] = Seq("testRes/test.txt")
 }

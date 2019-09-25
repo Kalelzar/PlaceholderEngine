@@ -1,5 +1,7 @@
 package src.kalelzar.placeholderengine.io.parse
 
+import scala.collection.mutable
+
 /**
   * A generic scanner interface that can be used to create overcomplicated and badly performing tokenizers
   */
@@ -78,7 +80,21 @@ trait Scanner {
     *
     * @return a list of tokens
     */
-  def scan(): Seq[Token]
+  def scan(): Seq[Token] = {
+    val res = mutable.ListBuffer[Token]()
+    while (!isAtEnd) {
+      res += check(next)
+    }
+    res.filter(_ != null).result()
+  }
+
+  /**
+    * Converts a character or a sequence of characters to a token
+    *
+    * @param c the char to convert
+    * @return the token
+    */
+  def check(c: Char): Token
 
 
 }

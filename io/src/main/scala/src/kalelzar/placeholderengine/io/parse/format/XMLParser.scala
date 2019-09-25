@@ -43,9 +43,9 @@ class XMLParser extends NodeParser {
           openTag()
         case Token(CLOSING_LEFT_ARROW(), _, _, _) =>
           closeTag()
-        case Token(XML_IDENTIFIER(), lexeme, _, _) =>
+        case Token(IDENTIFIER(), lexeme, _, _) =>
           val buff = new mutable.StringBuilder(lexeme)
-          while (check(XML_IDENTIFIER())) {
+          while (check(IDENTIFIER())) {
             buff.append(" " + next.lexeme)
           }
           val n = new Node[String]("__inner__")
@@ -60,7 +60,7 @@ class XMLParser extends NodeParser {
   }
 
   def closeTag(): Unit = {
-    val name = matches(XML_IDENTIFIER(), "Expected name of tag after '<' ")
+    val name = matches(IDENTIFIER(), "Expected name of tag after '<' ")
     matches(RIGHT_ARROW(), "Expected '>' after name of closing tag")
     if (openTags.isEmpty) throw new PlaceholderEngineParsingException(s"Attempted to close tag ${name.lexeme} before any tag was opened.", name.line)
     if (openTags.top.name != name.lexeme) throw new PlaceholderEngineParsingException(s"Attempted to close tag ${name.lexeme} before ${openTags.top.name}.", name.line)
@@ -71,12 +71,12 @@ class XMLParser extends NodeParser {
   }
 
   def openTag(): Unit = {
-    val name = matches(XML_IDENTIFIER(), "Expected name of tag after '<' ")
+    val name = matches(IDENTIFIER(), "Expected name of tag after '<' ")
     val buff = mutable.ListBuffer[(String, String)]()
-    while (!isAtEnd && check(XML_IDENTIFIER())) {
+    while (!isAtEnd && check(IDENTIFIER())) {
       val attrName = next
-      matches(XML_EQUALS(), "Expected '=' after attribute name")
-      val attrValue = matches(XML_IDENTIFIER(), "Expected identifier after '=' in attribute")
+      matches(EQUALS(), "Expected '=' after attribute name")
+      val attrValue = matches(IDENTIFIER(), "Expected identifier after '=' in attribute")
       buff += ((attrName.lexeme, attrValue.lexeme))
     }
     if (check(RIGHT_ARROW())) {

@@ -5,6 +5,11 @@ package src.kalelzar.placeholderengine.io
   * while simultaneously letting users not bother themselves with the specifics
   */
 trait PathResolver {
+  /**
+    * Resolve the path into a resource.
+    * @param path the path to resolve
+    * @return the resource
+    */
   def resolve(path: String): Resource[_]
 }
 

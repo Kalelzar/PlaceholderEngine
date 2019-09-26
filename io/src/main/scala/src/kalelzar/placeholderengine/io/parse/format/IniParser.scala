@@ -8,17 +8,29 @@ class IniParser extends NodeParser {
   var currentFile = new IniFile
   var currentSection = ""
 
+  /**
+    * @inheritdoc
+    * @param string the string
+    * @return the file
+    */
   override def parse(string: String): IniFile = {
     val r = super.parse(string)
     r.asInstanceOf[IniFile]
   }
 
+  /**
+    * @inheritdoc
+    */
   override def reset(): Unit = {
     super.reset()
     currentFile = new IniFile
     currentSection = ""
   }
 
+  /**
+    * @inheritdoc
+    * @return the parsed file
+    */
   override def logic(): IniFile = {
     while (!isAtEnd) {
       next match {
@@ -29,7 +41,10 @@ class IniParser extends NodeParser {
     currentFile
   }
 
-  def section(): Unit = {
+  /**
+    * Parses a section
+    */
+  protected def section(): Unit = {
     val name = matches(IDENTIFIER(), "Expect name of section.")
     //println(s"Parsing section ${name.lexeme}")
     matches(RIGHT_BRACKET(), "Expect ']' after name of section.")
@@ -37,8 +52,11 @@ class IniParser extends NodeParser {
     currentSection = name.lexeme
   }
 
-  def value(): Unit = {
-    val name = previous.lexeme.trim()
+  /**
+    * Parses a value
+    */
+  protected def value(): Unit = {
+    val name = current.lexeme.trim()
     //println(s"Parsing value $name in section ${currentSection}")
     matches(EQUALS(), "Expect '=' after key name.")
     val value = matches(IDENTIFIER(), "Expect value").lexeme

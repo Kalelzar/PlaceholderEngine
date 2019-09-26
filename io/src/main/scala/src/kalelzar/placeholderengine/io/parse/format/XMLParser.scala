@@ -18,11 +18,19 @@ class XMLParser extends NodeParser {
   private var currentFile = new XMLFile
   private var first = true
 
+  /**
+    * @inheritdoc
+    * @param string the string
+    * @return the file
+    */
   override def parse(string: String): XMLFile = {
     val r = super.parse(string)
     r.asInstanceOf[XMLFile]
   }
 
+  /**
+    * @inheritdoc
+    */
   override def reset(): Unit = {
     super.reset()
     currentFile = new XMLFile
@@ -32,6 +40,10 @@ class XMLParser extends NodeParser {
     currentNode = rootNode
   }
 
+  /**
+    * @inheritdoc
+    * @return the parsed file
+    */
   override def logic(): XMLFile = {
     while (!isAtEnd) {
       next match {
@@ -59,6 +71,9 @@ class XMLParser extends NodeParser {
     currentFile
   }
 
+  /**
+    * Parse a closing tag
+    */
   def closeTag(): Unit = {
     val name = matches(IDENTIFIER(), "Expected name of tag after '<' ")
     matches(RIGHT_ARROW(), "Expected '>' after name of closing tag")
@@ -70,6 +85,9 @@ class XMLParser extends NodeParser {
 
   }
 
+  /**
+    * parse a open tag
+    */
   def openTag(): Unit = {
     val name = matches(IDENTIFIER(), "Expected name of tag after '<' ")
     val buff = mutable.ListBuffer[(String, String)]()

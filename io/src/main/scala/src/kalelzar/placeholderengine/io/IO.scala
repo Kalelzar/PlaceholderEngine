@@ -4,12 +4,22 @@ import src.kalelzar.placeholderengine.common.exception.PlaceholderEngineParsingE
 import src.kalelzar.placeholderengine.io.format.TextFile
 import src.kalelzar.placeholderengine.io.parse.format.{ASSParser, IniParser, XMLParser}
 
+/**
+  * Convenience singleton for the opening of files.
+  */
 object IO {
 
+  /**
+    * Opens the file as the provided fileType.
+    * If the fileType is unrecognised it opens the file as a plain-text file.
+    * @param path the path to the file
+    * @param fileType the fileType
+    * @return the parsed file
+    */
   def open(path: String, fileType: String): PlaceholderEngineFile = {
     val data: Resource[_] = PathResolver.resolve(path)
     try {
-      resolve(fileType, data)
+      parse(fileType, data)
     } catch {
       case e: PlaceholderEngineParsingException =>
         val r = new RuntimeException(s"Parse error in file $path: ${e.getMessage}")
@@ -19,7 +29,13 @@ object IO {
     }
   }
 
-  def resolve(fileType: String, data: Resource[_]): PlaceholderEngineFile = {
+  /**
+    * Parses the resource as if it is the of the provided file type.
+    * @param fileType the file type
+    * @param data the data to parse
+    * @return the parsed file
+    */
+  def parse(fileType: String, data: Resource[_]): PlaceholderEngineFile = {
     fileType match {
       case "ini" =>
         val ip = new IniParser
